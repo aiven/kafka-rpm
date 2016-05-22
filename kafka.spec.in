@@ -17,6 +17,7 @@ Requires: java >= 1.6
 Requires(pre): shadow-utils
 Requires: zookeeper >= 3.3.4
 
+%global debug_package %{nil}
 %description
 It is designed to support the following
 
@@ -79,7 +80,6 @@ echo 'export PATH=${PATH}:/opt/kafka/bin' > %{buildroot}/etc/profile.d/kafka.sh
 %files
 %defattr(-,kafka,kafka)
 
-%config /opt/%{name}-%{version}/config
 /opt/%{name}-%{version}
 /var/log/kafka
 /etc/rc.d/init.d/kafka
