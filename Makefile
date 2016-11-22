@@ -1,9 +1,9 @@
 # The git tag/branch of kafka you need (i.e. master or 0.8.1.0 )
-GIT_VERSION_TAG=0.10.0.0
+GIT_VERSION_TAG=0.10.1.0
 
 #The version for the RPM
 #BEWARE THAT THIS MAY NOT CONTAIN A '-' !!!
-RPM_VERSION=0.10.0.0
+RPM_VERSION=0.10.1.0
 
 # The next thing is needed to use the latest version.
 # This is a numerical value that should increase with a newer release
@@ -51,11 +51,11 @@ RELEASE:
 	@echo 0 > $@
 
 kafka/.git:
-	@git clone https://github.com/apache/kafka.git kafka
+	@git clone --branch 0.10.1 https://github.com/apache/kafka.git kafka
 
 kafka-version: kafka/.git Makefile
 	@( cd kafka; \
-	   git checkout $(GIT_VERSION_TAG) ; \
+          git checkout $(GIT_VERSION_TAG) ; \
 	)
 
 
